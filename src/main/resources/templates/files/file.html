@@ -1,37 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Files</title>
-        <script>
-            function checkForm() {
-                const fileInput = document.getElementById('file');
-                const selectInput = document.getElementById('selectbox');
-                const submitButton = document.getElementById('submit');
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File</title>
 
-                if (fileInput.files.length > 0 && selectInput.value !== '') {
-                    submitButton.disabled = false;
-                } else {
-                    submitButton.disabled = true;
-                }
+    <script>
+        function checkForm() {
+            const fileInput = document.getElementById('file');
+            const selectInput = document.getElementById('selectbox');
+            const submitButton = document.getElementById('submit');
+
+            if (fileInput.files.length > 0 && selectInput.value !== '') {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
             }
-        </script>
-    </head>
-    <body>
-        <div>
-            <div>
-                <form action="/files/upload" method="post" enctype="multipart/form-data">
-                    <label for="file">파일선택: </label>
-                    <input type="file" id="file" name="file" onchange="checkForm()">
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        .korean-text {
+            font-family: "Nanum Gothic", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .english-text {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        .full-height-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .image-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            width: auto;
+        }
+        .custom-file-input {
+            display: none;
+        }
 
-                    <select id="selectbox" name="selectbox" onchange="checkForm()">
-                        <option value="" selected disabled>스타일 선택</option>
+        .custom-file-label::after {
+            content: '파일 선택';
+        }
+
+        .btn-file {
+            text-align: center;
+            padding: 8px;
+        }
+
+        .form-select {
+            text-align: center;
+            text-align-last: center;
+            padding: 8px;
+        }
+
+        .btn-selectbox {
+            padding: 8px;
+        }
+
+        .form-inline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .display-4 {
+            font-weight: bold;
+            font-size: 3.5rem;
+        }
+    </style>
+
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+        <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-4">Simple header</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item english-text"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item english-text"><a href="#" class="nav-link">Features</a></li>
+            <li class="nav-item english-text"><a href="#" class="nav-link">Pricing</a></li>
+            <li class="nav-item english-text"><a href="#" class="nav-link">FAQs</a></li>
+            <li class="nav-item english-text"><a href="#" class="nav-link">About</a></li>
+        </ul>
+    </header>
+</div>
+
+<div class="full-height-container">
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <h1 class="display-4 fw-bold text-body-emphasis korean-text">이미지 분석</h1>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4 english-text">We recommend the style you want with similar colors in the image!</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <form action="/files/upload" method="post" enctype="multipart/form-data" class="form-inline">
+                    <label class="btn btn-primary btn-lg btn-file korean-text" for="file">파일 선택</label>
+                    <input type="file" id="file" name="file" class="custom-file-input" onchange="checkForm()">
+
+                    <select class="form-select btn-selectbox korean-text" id="selectbox" name="selectbox" onchange="checkForm()">
+                        <option value="" selected disabled >스타일 선택</option>
+                        <option value="amekaji">아메카지</option>
                         <option value="casual">캐주얼</option>
+                        <option value="chic">시크</option>
                         <option value="dandy">댄디</option>
+                        <option value="business-casual">비지니스캐주얼</option>
+                        <option value="street">스트릿</option>
                     </select>
-                    <button type="submit" id="submit" disabled>제출</button>
+
+                    <button type="submit" class="btn btn-primary btn-lg korean-text" id="submit" disabled>제출</button>
                 </form>
             </div>
         </div>
-    </body>
+        <div class="image-container">
+            <div class="container px-5">
+                <img src="" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
