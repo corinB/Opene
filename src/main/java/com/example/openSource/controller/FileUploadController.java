@@ -24,11 +24,16 @@ public class FileUploadController {
     }
 
     @GetMapping("")
-    public String getFiles(){
+    public String home(){
+        return "files/home";
+    }
+
+    @GetMapping("/upload")
+    public String fileUploadHome(){
         return "files/file";
     }
 
-    @PostMapping("/upload")
+    @PostMapping("/upload/image")
     public String fileUpload(@RequestParam("file") MultipartFile file,
                              @RequestParam("selectbox") String style,
                              RedirectAttributes redirectAttributes) {
@@ -39,6 +44,6 @@ public class FileUploadController {
             redirectAttributes.addFlashAttribute("message",
                     "Successfully file uploaded: " + file.getOriginalFilename() + " with style: " + style + "!");
         }
-        return "redirect:/files";
+        return "redirect:/files/upload";
     }
 }

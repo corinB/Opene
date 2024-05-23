@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File</title>
+    <title>File Upload</title>
 
     <link rel="stylesheet" href="/css/stylesFile.css">
 
@@ -24,10 +24,9 @@
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="" class="nav-link active bg-dark" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="/files" class="nav-link active bg-dark" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#" onclick="window.location.reload();" class="nav-link">Upload</a></li>
+            <li class="nav-item"><a href="https://github.com/corinB/Opene" class="nav-link">GitHub</a></li>
             <li class="nav-item"><a href="" class="nav-link">About</a></li>
         </ul>
     </header>
@@ -39,7 +38,7 @@
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4 english-text">We recommend the style you want with similar colors in the image!</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <form action="/files/upload" method="post" enctype="multipart/form-data" class="form-inline">
+                <form action="/files/upload/image" method="post" enctype="multipart/form-data" class="form-inline">
                     <label class="btn btn-primary btn-lg btn-file korean-text bg-dark" for="file">파일 선택</label>
                     <input type="file" id="file" name="file" class="custom-file-input" onchange="checkForm()">
 
