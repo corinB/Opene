@@ -13,7 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Slf4j
 @Controller
-@RequestMapping("/files")
+@RequestMapping("/home")
 public class FileUploadController {
 
     private final  FileUploadService service;
@@ -44,6 +44,6 @@ public class FileUploadController {
             redirectAttributes.addFlashAttribute("message",
                     "Successfully file uploaded: " + file.getOriginalFilename() + " with style: " + style + "!");
         }
-        return "redirect:/files/upload";
+        return "files/imageShow";
     }
 }

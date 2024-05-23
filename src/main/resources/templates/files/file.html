@@ -4,41 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Upload</title>
-
     <link rel="stylesheet" href="/css/stylesFile.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-
 </head>
 <body>
 <div class="container">
     <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
-        <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
             <span class="fs-4">Simple header</span>
         </a>
-
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="/files" class="nav-link active bg-dark" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" onclick="window.location.reload();" class="nav-link">Upload</a></li>
+            <li class="nav-item"><a href="/home" class="nav-link active bg-dark" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/file" class="nav-link">Upload</a></li>
             <li class="nav-item"><a href="https://github.com/corinB/Opene" class="nav-link">GitHub</a></li>
-            <li class="nav-item"><a href="" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
         </ul>
     </header>
 </div>
-
 <div class="full-height-container">
     <div class="px-4 pt-5 my-5 text-center border-bottom">
         <h1 class="display-4 fw-bold text-body-emphasis korean-text">이미지 분석</h1>
         <div class="col-lg-6 mx-auto">
             <p class="lead mb-4 english-text">We recommend the style you want with similar colors in the image!</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <form action="/files/upload/image" method="post" enctype="multipart/form-data" class="form-inline">
+                <form action="/home/upload/image" method="post" enctype="multipart/form-data" class="form-inline">
                     <label class="btn btn-primary btn-lg btn-file korean-text bg-dark" for="file">파일 선택</label>
                     <input type="file" id="file" name="file" class="custom-file-input" onchange="checkForm()">
 
@@ -63,7 +56,7 @@
         </div>
     </div>
 </div>
-
+<!-- Rest of your HTML code -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -72,7 +65,6 @@
         const fileInput = document.getElementById('file');
         const selectInput = document.getElementById('selectbox');
         const submitButton = document.getElementById('submit');
-
         if (fileInput.files.length > 0 && selectInput.value !== '') {
             submitButton.disabled = false;
         } else {
