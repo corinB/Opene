@@ -5,93 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File</title>
 
-    <script>
-        function checkForm() {
-            const fileInput = document.getElementById('file');
-            const selectInput = document.getElementById('selectbox');
-            const submitButton = document.getElementById('submit');
+    <link rel="stylesheet" href="/css/stylesFile.css">
 
-            if (fileInput.files.length > 0 && selectInput.value !== '') {
-                submitButton.disabled = false;
-            } else {
-                submitButton.disabled = true;
-            }
-        }
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        .korean-text {
-            font-family: "Nanum Gothic", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-        .english-text {
-            font-family: "Roboto", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
-        .full-height-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .image-container {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: auto;
-        }
-        .image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            height: auto;
-            width: auto;
-        }
-        .custom-file-input {
-            display: none;
-        }
 
-        .custom-file-label::after {
-            content: '파일 선택';
-        }
-
-        .btn-file {
-            text-align: center;
-            padding: 8px;
-        }
-
-        .form-select {
-            text-align: center;
-            text-align-last: center;
-            padding: 8px;
-        }
-
-        .btn-selectbox {
-            padding: 8px;
-        }
-
-        .form-inline {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .display-4 {
-            font-weight: bold;
-            font-size: 3.5rem;
-        }
     </style>
 
-
-
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 
 </head>
@@ -104,11 +28,11 @@
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item english-text"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item english-text"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item english-text"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item english-text"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item english-text"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="" class="nav-link">About</a></li>
         </ul>
     </header>
 </div>
@@ -148,5 +72,18 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function checkForm() {
+        const fileInput = document.getElementById('file');
+        const selectInput = document.getElementById('selectbox');
+        const submitButton = document.getElementById('submit');
+
+        if (fileInput.files.length > 0 && selectInput.value !== '') {
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+</script>
 </body>
 </html>
