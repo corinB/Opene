@@ -42,7 +42,14 @@ body, html {
     text-align: center;
     padding: 8px;
 }
-
+#submit {
+    background-color: #000000;
+    border-color: #000000;
+}
+.btn-primary {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
+}
 .form-select {
     text-align: center;
     text-align-last: center;
@@ -61,4 +68,10 @@ body, html {
 body .display-4 {
     font-weight: bold;
     font-size: 3.5rem;
+}
+.nav-link {
+        color: #000000;!important;
+}
+.fs-4 {
+        color: #000000;
 }

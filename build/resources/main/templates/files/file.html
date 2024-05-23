@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File</title>
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/stylesFile.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <style>
-
-    </style>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
 
 
 </head>
@@ -28,11 +24,11 @@
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="" class="nav-link active bg-dark" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="" class="nav-link">About</a></li>
         </ul>
     </header>
 </div>
@@ -44,7 +40,7 @@
             <p class="lead mb-4 english-text">We recommend the style you want with similar colors in the image!</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
                 <form action="/files/upload" method="post" enctype="multipart/form-data" class="form-inline">
-                    <label class="btn btn-primary btn-lg btn-file korean-text" for="file">파일 선택</label>
+                    <label class="btn btn-primary btn-lg btn-file korean-text bg-dark" for="file">파일 선택</label>
                     <input type="file" id="file" name="file" class="custom-file-input" onchange="checkForm()">
 
                     <select class="form-select btn-selectbox korean-text" id="selectbox" name="selectbox" onchange="checkForm()">
