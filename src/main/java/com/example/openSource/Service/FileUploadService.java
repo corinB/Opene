@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-
 @Service
 public class FileUploadService {
 
@@ -19,10 +17,11 @@ public class FileUploadService {
     }
 
     public void store(MultipartFile file){
+        clearUploadDirectory(); // 파일을 저장하기 전에 업로드 디렉토리를 비웁니다.
         repository.store(file);
     }
 
-    public void clearUploadDirectory() {
+    private void clearUploadDirectory() {
         String uploadDirectory = "C:/upload-dir"; // 업로드 디렉토리 경로
         DirectoryCleaner.cleanDirectory(uploadDirectory);
     }
