@@ -13,10 +13,10 @@ body, html {
     margin: 0;
 }
 .full-height-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+     display: flex;
+     flex-direction: column;
+     min-height: 50vh;
+ }
 .nav-link {
     color: #000000;
 }
@@ -25,4 +25,8 @@ body, html {
 }
 .home .nav-link {
     color: #ffffff !important;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
 }

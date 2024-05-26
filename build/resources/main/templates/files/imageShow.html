@@ -41,9 +41,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
     var imageUrls = [
-        "https://via.placeholder.com/800x400?text=First+Slide",
-        "https://via.placeholder.com/800x400?text=Second+Slide",
-        "https://via.placeholder.com/800x400?text=Third+Slide"
+        "/img/amekaji/t1.webp",
+        "/img/amekaji/t2.webp"
     ];
     function addImagesToCarousel() {
         var carouselImagesDiv = document.getElementById("carouselImages");
@@ -55,7 +54,8 @@
             }
             var img = document.createElement("img");
             img.src = imageUrls[i];
-            img.classList.add("d-block", "w-100");
+            img.style.height = "650px"; // 이미지의 가로폭을 200px로 지정
+            img.classList.add("d-block", "mx-auto"); // 이미지를 가운데 정렬
             img.alt = "Slide " + (i + 1);
             carouselItemDiv.appendChild(img);
             carouselImagesDiv.appendChild(carouselItemDiv);
