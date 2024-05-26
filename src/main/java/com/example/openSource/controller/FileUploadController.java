@@ -37,12 +37,18 @@ public class FileUploadController {
     public String fileUpload(@RequestParam("file") MultipartFile file,
                              @RequestParam("selectbox") String style,
                              RedirectAttributes redirectAttributes) {
-        if (!file.isEmpty()) {
-            log.info("file getOriginalFilename = {}", file.getOriginalFilename());
-            log.info("selected style = {}", style);
-            service.store(file);
-            redirectAttributes.addFlashAttribute("message",
-                    "Successfully file uploaded: " + file.getOriginalFilename() + " with style: " + style + "!");
+        try {
+            if (!file.isEmpty()) {
+                log.info("file getOriginalFilename = {}", file.getOriginalFilename());
+                log.info("selected style = {}", style);
+                service.store(file);
+                redirectAttributes.addFlashAttribute("message",
+                        "Successfully file uploaded: " + file.getOriginalFilename() + " with style: " + style + "!");
+                return "files/imageShow";
+            }
+        } catch (RuntimeException e) {
+            redirectAttributes.addFlashAttribute("errorMessage", e.getMessage());
+            return "redirect:/home/upload";
         }
         return "files/imageShow";
     }

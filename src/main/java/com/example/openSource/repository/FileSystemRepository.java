@@ -21,10 +21,15 @@ public class FileSystemRepository {
         if(file.isEmpty()){
             throw new RuntimeException("failed to store empty file");
         }
+        // 이미지 파일만
+        String contentType = file.getContentType();
+        if (contentType == null || !contentType.startsWith("image/")) {
+            throw new RuntimeException("Only image files are allowed");
+        }
         Path destinationFile = this.storeLocation.resolve(
                 Paths.get(file.getOriginalFilename()))
                 .normalize().toAbsolutePath();
-        log.debug("DestinationPath: " + destinationFile.toString());
+        //log.debug("DestinationPath: " + destinationFile.toString());
 
         if(!destinationFile.getParent().equals(this.storeLocation.toAbsolutePath())){
             throw new RuntimeException("Cannot store file outside current directory");
