@@ -16,9 +16,9 @@ public class FileUploadService {
         this.repository = repository;
     }
 
-    public void store(MultipartFile file){
-        clearUploadDirectory(); // 파일을 저장하기 전에 업로드 디렉토리를 비웁니다.
-        repository.store(file);
+    public String store(MultipartFile file){
+        clearUploadDirectory(); // 파일 저장 전 디렉토리 비우기
+        return repository.store(file);
     }
 
     private void clearUploadDirectory() {

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.themeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>image</title>
+    <title>Image Show</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/stylesImageShow.css" rel="stylesheet">
 </head>
@@ -24,7 +24,10 @@
 <div class="container full-height-container">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div id="carouselImages" class="carousel-inner">
-            <!-- Images will be inserted here by JavaScript -->
+            <!-- Thymeleaf를 사용하여 이미지 URL을 반복하고, carousel에 추가 -->
+            <div class="carousel-item" th:each="imageUrl, status : ${imageUrls}" th:classappend="${status.index == 0} ? 'active' : ''">
+                <img th:src="${imageUrl}" style="height: 650px;" class="d-block mx-auto" th:alt="'Slide ' + ${status.index + 1}">
+            </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -39,29 +42,5 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    var imageUrls = [
-        "/img/amekaji/t1.webp",
-        "/img/amekaji/t2.webp"
-    ];
-    function addImagesToCarousel() {
-        var carouselImagesDiv = document.getElementById("carouselImages");
-        for (var i = 0; i < imageUrls.length; i++) {
-            var carouselItemDiv = document.createElement("div");
-            carouselItemDiv.classList.add("carousel-item");
-            if (i === 0) {
-                carouselItemDiv.classList.add("active");
-            }
-            var img = document.createElement("img");
-            img.src = imageUrls[i];
-            img.style.height = "650px"; // 이미지의 가로폭을 200px로 지정
-            img.classList.add("d-block", "mx-auto"); // 이미지를 가운데 정렬
-            img.alt = "Slide " + (i + 1);
-            carouselItemDiv.appendChild(img);
-            carouselImagesDiv.appendChild(carouselItemDiv);
-        }
-    }
-    window.onload = addImagesToCarousel;
-</script>
 </body>
 </html>

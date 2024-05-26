@@ -17,7 +17,7 @@ public class FileSystemRepository {
 
     private final Path storeLocation = Paths.get("C:/upload-dir");
 
-    public void store(MultipartFile file) {
+    public String store(MultipartFile file) {
         if(file.isEmpty()){
             throw new RuntimeException("failed to store empty file");
         }
@@ -38,6 +38,7 @@ public class FileSystemRepository {
         try(InputStream inputStream = file.getInputStream()){
             Files.copy(inputStream, destinationFile, StandardCopyOption.REPLACE_EXISTING);
             log.info("Successfully file stored: {}", destinationFile);
+            return destinationFile.toString();
         } catch (IOException e) {
             throw new RuntimeException("Failed to store file",e);
         }

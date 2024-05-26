@@ -1,124 +1,123 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Upload</title>
-    <link rel="stylesheet" href="/css/stylesFile.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-<div class="container">
-    <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
-        <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"></svg>
-            <span class="fs-4"></span>
-        </a>
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="/home" class="nav-link active bg-dark" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" onclick="window.location.reload();" class="nav-link">Upload</a></li>
-            <li class="nav-item"><a href="https://github.com/corinB/Opene" class="nav-link">GitHub</a></li>
-        </ul>
-    </header>
-</div>
-<div class="full-height-container">
-    <div class="px-4 pt-5 my-5 text-center border-bottom">
-        <h1 class="display-4 fw-bold text-body-emphasis korean-text">이미지 분석</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4 english-text">We recommend the style you want with similar colors in the image!</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <form action="/home/upload/image" method="post" enctype="multipart/form-data" class="form-inline" onsubmit="return validateFile()">
-                    <label class="btn btn-primary btn-lg btn-file korean-text bg-dark" for="file">파일 선택</label>
-                    <input type="file" id="file" name="file" class="custom-file-input" onchange="checkForm()">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>File Upload</title>
+        <link rel="stylesheet" href="/css/stylesFile.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+            <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <svg class="bi me-2" width="40" height="32"></svg>
+                <span class="fs-4"></span>
+            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/home" class="nav-link active bg-dark" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#" onclick="window.location.reload();" class="nav-link">Upload</a></li>
+                <li class="nav-item"><a href="https://github.com/corinB/Opene" class="nav-link">GitHub</a></li>
+            </ul>
+        </header>
+    </div>
+    <div class="full-height-container">
+        <div class="px-4 pt-5 my-5 text-center border-bottom">
+            <h1 class="display-4 fw-bold text-body-emphasis korean-text">이미지 분석</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4 english-text">We recommend the style you want with similar colors in the image!</p>
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                    <form action="/home/upload/image" method="post" enctype="multipart/form-data" class="form-inline" onsubmit="return validateFile()">
+                        <label class="btn btn-primary btn-lg btn-file korean-text bg-dark" for="file">파일 선택</label>
+                        <input type="file" id="file" name="file" class="custom-file-input" onchange="checkForm()">
 
-                    <select class="form-select btn-selectbox korean-text" id="selectbox" name="selectbox" onchange="checkForm()">
-                        <option value="" selected disabled >스타일 선택</option>
-                        <option value="amekaji">아메카지</option>
-                        <option value="casual">캐주얼</option>
-                        <option value="chic">시크</option>
-                        <option value="dandy">댄디</option>
-                        <option value="business-casual">비지니스캐주얼</option>
-                        <option value="street">스트릿</option>
-                    </select>
+                        <select class="form-select btn-selectbox korean-text" id="selectbox" name="selectbox" onchange="checkForm()">
+                            <option value="" selected disabled >스타일 선택</option>
+                            <option value="amekaji">아메카지</option>
+                            <option value="casual">캐주얼</option>
+                            <option value="chic">시크</option>
+                            <option value="business-casual">비지니스캐주얼</option>
+                            <option value="street">스트릿</option>
+                        </select>
 
-                    <button type="submit" class="btn btn-primary btn-lg korean-text" id="submit" disabled>제출</button>
-                </form>
+                        <button type="submit" class="btn btn-primary btn-lg korean-text" id="submit" disabled>제출</button>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="image-container">
-            <div class="container px-5">
-                <img src="" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+            <div class="image-container">
+                <div class="container px-5">
+                    <img src="" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="alertModalLabel">알림</h5>
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">알림</h5>
 
-            </div>
-            <div class="modal-body">
-                <!-- 오류 메시지가 여기에 삽입됩니다 -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                </div>
+                <div class="modal-body">
+                    <!-- 오류 메시지(이미지 파일이 아닌 다른 파일 업로드시)-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Rest of your HTML code -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    function checkForm() {
-        const fileInput = document.getElementById('file');
-        const selectInput = document.getElementById('selectbox');
-        const submitButton = document.getElementById('submit');
-        if (fileInput.files.length > 0 && selectInput.value !== '') {
-            submitButton.disabled = false;
-        } else {
-            submitButton.disabled = true;
-        }
-    }
-
-    function validateFile() {
-        const fileInput = document.getElementById('file');
-        const file = fileInput.files[0];
-        if (file) {
-            const fileType = file.type;
-            if (!fileType.startsWith('image/')) {
-                showAlert("이미지 파일만 업로드할 수 있습니다!");
-                fileInput.value = ""; // 파일 입력 초기화
-                checkForm(); // 폼 상태 재평가
-                return false;
+    <!-- Rest of your HTML code -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function checkForm() {
+            const fileInput = document.getElementById('file');
+            const selectInput = document.getElementById('selectbox');
+            const submitButton = document.getElementById('submit');
+            if (fileInput.files.length > 0 && selectInput.value !== '') {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
             }
         }
-        checkForm();
-        return true;
+
+        function validateFile() {
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+            if (file) {
+                const fileType = file.type;
+                if (!fileType.startsWith('image/')) {
+                    showAlert("이미지 파일만 업로드할 수 있습니다!");
+                    fileInput.value = "";
+                    checkForm();
+                    return false;
+                }
+            }
+            checkForm();
+            return true;
+        }
+
+        function showAlert(message) {
+        const modalElement = document.getElementById('alertModal');
+        const modalBody = modalElement.querySelector('.modal-body');
+        modalBody.textContent = message;
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
     }
 
-    function showAlert(message) {
-    const modalElement = document.getElementById('alertModal');
-    const modalBody = modalElement.querySelector('.modal-body');
-    modalBody.textContent = message;
-    const modal = new bootstrap.Modal(modalElement);
-    modal.show();
-}
+        document.addEventListener("DOMContentLoaded", function () {
+            const errorMessage = document.getElementById('error-message') ? document.getElementById('error-message').value : null;
+            if (errorMessage) {
+                showAlert(errorMessage);
+            }
+        });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const errorMessage = document.getElementById('error-message') ? document.getElementById('error-message').value : null;
-        if (errorMessage) {
-            showAlert(errorMessage);
-        }
-    });
-
-</script>
-</body>
+    </script>
+    </body>
 </html>

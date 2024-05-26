@@ -1,7 +1,6 @@
 package com.example.openSource.util;
 
 import java.io.File;
-import java.io.File;
 
 public class DirectoryCleaner {
 
