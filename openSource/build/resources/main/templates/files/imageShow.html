@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.themeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Show</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/stylesImageShow.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-between py-3 mb-4 border-bottom">
+        <a href="" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"></svg>
+            <span class="fs-4"></span>
+        </a>
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/home" class="nav-link active bg-dark home" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/home/upload" class="nav-link">Upload</a></li>
+            <li class="nav-item"><a href="https://github.com/corinB/Opene" class="nav-link">GitHub</a></li>
+        </ul>
+    </header>
+</div>
+<div class="container full-height-container">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <!-- 인디케이터 동적 생성 -->
+            <th:block th:each="imageUrl, index : ${imgUrls}">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" th:class="${index.index == 0} ? 'active' : ''"></li>
+            </th:block>
+        </ol>
+        <div class="carousel-inner" style="background-color: black; hight: 110%;">
+            <!-- 이미지 항목 동적 생성 -->
+            <th:block th:each="imageUrl, index : ${imgUrls}" height="100%" style="align-items: center; justify-content: center">
+                <div class="carousel-item" th:classappend="${index.index == 0} ? 'active' : ''" style="float: left">
+                    <li style="color: white; padding: 10px">step: <span th:text="${index.index + 1}"></span></li>
+                    <img class="d-block mx-auto" style="height: 500px;" th:src="@{${imageUrl}}" th:alt="'이미지 ' + ${index.index + 1}">
+                </div>
+            </th:block>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

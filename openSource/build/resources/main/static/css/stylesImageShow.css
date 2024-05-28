@@ -1,0 +1,32 @@
+.korean-text {
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.english-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.full-height-container {
+     display: flex;
+     flex-direction: column;
+     min-height: 50vh;
+ }
+.nav-link {
+    color: #000000;
+}
+.fs-4 {
+    color: #000000;
+}
+.home .nav-link {
+    color: #ffffff !important;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
