@@ -65,8 +65,8 @@
 ## 개발환경
 - spring-boot 3.2.6 
 - python(conda) 3.10
-- spring-boot-dependencies: Lombok, spring-web, thymeleaf
-- JDK: jdk-17-amazon-corretto
+- jdk-17-amazon-corretto
+- spring-boot-dependencies: lombok, spring-web, thymeleaf
 - IDEA: IteliJ, Pycharm, Colap
 
 
