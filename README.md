@@ -31,6 +31,7 @@
 - flask 서버 작동시 conda 환경 필요
 - python 3.10 환경
 - packagelist 인스톨 필요
+
   ```bash
   conda install -r packagelist.txt
 
@@ -56,7 +57,7 @@
 
   
 ## 연락처
-[email](gkdisrhs2020@gmail.com)
+<h4> email: gkdisrha2020@mail.com </h4>
 
 
 
