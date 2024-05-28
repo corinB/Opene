@@ -23,11 +23,19 @@
 </div>
 <div class="container full-height-container">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div id="carouselImages" class="carousel-inner">
-            <!-- Thymeleaf를 사용하여 이미지 URL을 반복하고, carousel에 추가 -->
-            <div class="carousel-item" th:each="imageUrl, status : ${imageUrls}" th:classappend="${status.index == 0} ? 'active' : ''">
-                <img th:src="${imageUrl}" style="height: 650px;" class="d-block mx-auto" th:alt="'Slide ' + ${status.index + 1}">
-            </div>
+        <ol class="carousel-indicators">
+            <!-- 인디케이터 동적 생성 -->
+            <th:block th:each="imageUrl, index : ${imageUrls}">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" th:class="${index.index == 0} ? 'active' : ''"></li>
+            </th:block>
+        </ol>
+        <div class="carousel-inner">
+            <!-- 이미지 항목 동적 생성 -->
+            <th:block th:each="imageUrl, index : ${imageUrls}">
+                <div class="carousel-item" th:classappend="${index.index == 0} ? 'active' : ''">
+                    <img class="d-block mx-auto" style="height: 650px;" th:src="@{${imageUrl}}" th:alt="'이미지 ' + ${index.index + 1}">
+                </div>
+            </th:block>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
