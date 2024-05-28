@@ -9,6 +9,7 @@
 - [기여](#기여)
 - [라이선스](#라이선스)
 - [연락처](#연락처)
+- [개발환경경](#개발환경)
 
 
 
@@ -37,9 +38,9 @@
 
 
 ## 기여
- 백종현: yolov5를 AI 모델 학습, Flask API 서버 개발, API 서버와 메인서버 연결
- 진다빈: Spring을 이용한 메인 서버 개발, 프론트 제작, API 서버와 메인서버 연결
- 권체은: 무신사크롤링, AI를 통해 생성한 데이터(csv) 필터링, png파일을 webp형식으로 포멧팅
+- 백종현: yolov5를 AI 모델 학습, Flask API 서버 개발, API 서버와 메인서버 연결
+- 진다빈: Spring을 이용한 메인 서버 개발, 프론트 제작, API 서버와 메인서버 연결
+- 권체은: 무신사크롤링, AI를 통해 생성한 데이터(csv) 필터링, png파일을 webp형식으로 포멧팅
 
 
 
@@ -60,7 +61,7 @@
 
 
 
-### 사용 소프트웨어 버전
+## 개발환경
 - spring-boot 3.2.6 
 - python(conda) 3.10
 - spring-boot-dependencies: Lombok, spring-web, thymeleaf
