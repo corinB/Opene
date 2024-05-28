@@ -26,7 +26,12 @@
 ## 기여
 
 ## 라이선스
-
+- spring-boot: Apache 2.0
+- bootstrap: MIT
+- yolov5: GPL 3.0
+- PyTorch: BSD 3-Clause
+- images: Crawaling for [MUSINSA](https://www.musinsa.com)
+  
 ## 연락처
 
 
