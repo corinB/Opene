@@ -9,6 +9,10 @@
 [![YOLOv5](https://img.shields.io/badge/YOLOv5-custom%20weights-00FFFF)](#)
 [![License](https://img.shields.io/badge/License-Mixed-blue)](#license)
 
+[![Watch the demo](https://img.youtube.com/vi/DxCflyinK2I/maxresdefault.jpg)](https://www.youtube.com/watch?v=DxCflyinK2I)
+
+> ▶ **데모 영상**: [YouTube에서 보기](https://www.youtube.com/watch?v=DxCflyinK2I)
+
 ---
 
 ## Table of Contents
@@ -42,6 +46,8 @@
 총 **5개 스타일 카테고리 · 약 2,914장**의 무신사 코디 이미지가 전처리된 RGB와 함께 서버에 적재되어 있어, 별도 외부 API 호출 없이 로컬에서 추천이 끝납니다.
 
 ## Demo Flow
+
+전체 사용자 흐름은 위 [데모 영상](https://www.youtube.com/watch?v=DxCflyinK2I)에서 확인할 수 있습니다.
 
 ```
 1. 옷 사진 업로드     →  2. 스타일 카테고리 선택     →  3. 추천 코디 캐러셀
