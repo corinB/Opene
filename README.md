@@ -154,9 +154,9 @@ Opene/
 
 | Branch | Owner | 산출물 | 한 줄 요약 |
 |--------|-------|--------|-----------|
-| `master` | (통합) | 위 트리 전부 | Spring + Flask + 5 스타일 데이터셋의 통합 데모 가능 형태 |
+| `master` | **백종현 (팀장)** | 위 트리 전부 + BE↔AI 통신 통합 | 4인 작업 통합 머지 + Spring ↔ Flask 통신 레이어 와이어링 |
 | `baek` | 백종현 | `fun.py`, `best.pt`, `last.pt`, `baek.txt` | YOLOv5 학습 가중치 + Flask `/api` 추론 서버 |
-| `bin` | 진다빈 | `openSource/**`, `1.상의하의검출.ipynb`, `dabin.text` | Spring Boot 백엔드와 Thymeleaf 프론트, BE↔AI 통신 와이어링 |
+| `bin` | 진다빈 | `openSource/**`, `1.상의하의검출.ipynb`, `dabin.text` | Spring Boot 백엔드 + Thymeleaf 프론트엔드 |
 | `che` | 권체은 | `che.이미지크롤링.ipynb`, `che.csv빈칸삭제.ipynb`, `che.txt`, 6 스타일 결과 CSV | 무신사 크롤러 + RGB CSV 정제 + WebP 포맷 변환 |
 | `mycolab` | 백종현 (보조) | `flask.ipynb`, `Untitled0.ipynb`, `colab_requirements.txt` | Colab 기반 학습/실험 환경 (`streamlit`, `pyngrok`로 외부 노출 시도) |
 
@@ -267,8 +267,8 @@ CSV 스키마: index, `TOP_RGB`, `BOTTOM_RGB`, `path` (예: `(48, 43, 48)`, `(10
 
 | 이름 | 역할 | 브랜치 |
 |------|------|--------|
-| 백종현 | YOLOv5 학습, Flask API 서버, BE↔AI 연결 | `baek`, `mycolab` |
-| 진다빈 | Spring Boot 메인 서버, 프론트엔드, BE↔AI 연결 | `bin` |
+| **백종현 (팀장)** | YOLOv5 학습, Flask AI 서버 구현, BE↔AI 통신 레이어, 통합 머지 | `master`, `baek`, `mycolab` |
+| 진다빈 | Spring Boot 메인 서버, 프론트엔드 | `bin` |
 | 권체은 | 무신사 크롤링, AI 결과 CSV 정제, PNG → WebP 포맷 변환 | `che` |
 
 ## Contact
